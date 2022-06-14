@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Header Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">All  Courses</h5>
+                <!-- <h1>Our Popular Courses</h1> -->
+            </div>
+            <div class="row">
+               
+                {% for course in courses %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="/media/{{ course.course_img }}" alt="">
+                        <div class="bg-secondary p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{course.course_student}} Students</small>
+                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>{{course.course_duration}}</small>
+                            </div>
+                            <a class="h5" href="course-details/{{course.id}}">{{course.course_name}}</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>{{course.course_rating}}.0<small>(250)</small></h6>
+                                    <h5 class="m-0">FREE</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+                
+                </div>
+                <!-- <div class="text-center"><a href="/view-courses">View More</a></div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Category Start -->
+{% endblock %}

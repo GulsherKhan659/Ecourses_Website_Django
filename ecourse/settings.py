@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'courses_card',
+    'teachers',
+    'checkmodel',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +127,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [BASE_DIR,"static"]
+
+MEDIA_ROOT = BASE_DIR/"media/"
+
+
+MEDIA_URL = "/media/"

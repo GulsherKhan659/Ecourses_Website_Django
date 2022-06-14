@@ -26,79 +26,23 @@
                 <h1>Explore Top Subjects</h1>
             </div>
             <div class="row">
+                {% for course_count,categ in zipped_data %}
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/static/img/cat-1.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Web Design</h4>
-                            <span>100 Courses</span>
+                        <img class="img-fluid update_url" src="/media/{{ categ.category_img }}" alt="">
+                        
+                        <a class="cat-overlay text-white text-decoration-none" href="course-by-catagory/{{ categ.id }}">
+                            <h4 class="text-white font-weight-medium">{{ categ.course_category }}</h4>
+                            <span>{{ course_count }} Courses</span>
+                        
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/static/img/cat-2.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Development</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/static/img/cat-3.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Game Design</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/static/img/cat-4.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Apps Design</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/static/img/cat-5.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Marketing</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/static/img/cat-6.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Research</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/static/img/cat-7.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">Content Writing</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="/static/img/cat-8.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">SEO</h4>
-                            <span>100 Courses</span>
-                        </a>
-                    </div>
-                </div>
+                {% endfor %}
+              
             </div>
+            <div class="text-center"><a href="/view-catagories">View More</a></div>
+
         </div>
     </div>
     <!-- Category Start -->
@@ -112,25 +56,28 @@
                 <h1>Our Popular Courses</h1>
             </div>
             <div class="row">
+                {% for course in courses %}
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="/static/img/course-1.jpg" alt="">
+                        <img class="img-fluid" src="/media/{{ course.course_img }}" alt="">
                         <div class="bg-secondary p-4">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{course.course_student}} Students</small>
+                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>{{course.course_duration}}</small>
                             </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
+                            <a class="h5" href="course-details/{{course.id}}">{{course.course_name}}</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$99</h5>
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>{{course.course_rating}}.0<small>({{course.course_student}})</small></h6>
+                                    <h5 class="m-0">FREE</h5>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
+                {% endfor %}
+                <!-- <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
                         <img class="img-fluid" src="/static/img/course-2.jpg" alt="">
                         <div class="bg-secondary p-4">
@@ -218,8 +165,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
+                <div class="text-center"><a href="/view-courses">View More</a></div>
             </div>
         </div>
     </div>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Header Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Explore Career</h5>
+                <h1> Explore Top Subjects</h1>
+                <div class="row">
+                    <div class="col-6">
+                     </div>
+                        <div class="col-6">
+                        <div class="input-group-col-6">
+                            <input type="search" value="Data" class="btn border rounded" style="text-align: left" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <button type="button" class="btn btn-primary">search</button>
+                         </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                {% for count_course,course in zipped_data %}
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid update_url" src="/media/{{ course.category_img }}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="">
+                            <h4 class="text-white font-weight-medium">{{ course.course_category }}</h4>
+                            <span>{{ count_course }} Courses</span>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                
+            </div>
+        </div>
+    </div>
+    <!-- Category Start -->
+{% endblock %}

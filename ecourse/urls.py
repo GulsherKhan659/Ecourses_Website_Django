@@ -16,14 +16,31 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ecourse import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-  #  path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', views.index_page, name="home"),
     path('about', views.about_page, name="about"),
     path('teacher', views.teacher_page, name="teachers"),
     path('course', views.course_page, name="courses"),
     path('blog', views.blog_page, name="blog"),
-    path('contact', views.contact_page, name="contact")
+    path('contact', views.contact_page, name="contact"),
+    path('practice/<myid>',views.practice,name="practice"),
+    path('course-details/<id>',views.course_details),
+    path('course-by-catagory/course-details/<id>',views.course_details),
+    path('course-by-catagory/<id>',views.courses_by_categories),
+    path('view-courses',views.all_courses),
+    
+    path('view-catagories',views.all_categories)
 
 ]
+
+
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) 
+        
+    
+    

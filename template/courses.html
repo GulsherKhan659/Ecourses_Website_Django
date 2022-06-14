@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+    <!-- Courses Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
+                <h1>All  Courses </h1>
+
+                <div class="row">
+                <div class="col-6">
+                 </div>
+                    <div class="col-6">
+                    <div class="input-group-col-6">
+                        <input type="search" value="Data" class="btn border rounded" style="text-align: left" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <button type="button" class="btn btn-primary">search</button>
+                     </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                
+                {% for course in courses %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="/media/{{ course.course_img }}" alt="">
+                        <div class="bg-secondary p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>{{course.course_student}} Students</small>
+                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>{{course.course_duration}}</small>
+                            </div>
+                            <a class="h5" href="">{{course.course_name}}</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>{{course.course_rating}}.0<small>(250)</small></h6>
+                                    <h5 class="m-0">FREE</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Courses End -->
+
+{% endblock %}

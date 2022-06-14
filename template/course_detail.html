@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Header Start -->
+    <div class="container-fluid " style="margin-bottom: 90px;">
+        <div class="container">
+    
+    <div class="bg-registration" style="padding:  100px 11px;">
+        <div class="class" style="position: absolute; top: 12%;right:6%;">
+            <div style="height:135px;width:30px;background-color:transparent;">
+            <img src="/static/img/certified_iso.png" height="120px">
+            </div>
+        <span class="h5 text-right text-white" >Course Offer By</span>  
+        <span class="d-flex align-items-center justify-content-between  w-100 text-decoration-none"  style="height: 50px; padding: 0px 40px 0px 5px;background-color: white;">
+            <h5 class="m-3 h4 "><i class="fa fa-book-open mr-2"></i><span class="text-primary">E</span>COURSES</h5>
+            <!-- <i class="fa fa-angle-down text-primary"></i> -->
+        </span> 
+        </div>
+        <h3 class="m-2  text-white ">Welcome To Course</h3>
+        <h2 class="m-2  text-white">{{course_detail.course_name}}</h2>
+        <button class="m-2 btn btn-primary"> Enroll </button><span class="m-0 h6 text-white"><i class="fa fa-star text-primary mr-2"></i>{{course_detail.course_rating}}.0 <small> Ratings ({{course_detail.course_student}})</small> <b>Aleardy Enrolled</b></span>
+
+        </div>
+        <h4 style="padding: 7px;" class="text-primary">Course Details</h4>
+         <div class="row">
+            
+            <div class="col-8">
+                
+                <div style="border: 1.2px solid;padding: 0px 5px; border-radius: 10px;">
+                    <h6 class="m-3">What You Learn In This Course</h6>
+                    <ul>
+                        <li style="padding-top: 3px;"><i class="fa fa-check text-primary"></i>&nbsp;Lpsum dolor sit amet consectetur adipisicing elit. Laudantium aspernatur,  impedit pariatur optio repellendus, sunt quam incidunt corporis.</li>
+                        <li style="padding-top: 3px;"><i class="fa fa-check text-primary"></i>&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aspernatur,  impedit pariatur optio repellendus, sunt quam incidunt corporis.</li>
+                        <li style="padding-top: 3px;"><i class="fa fa-check text-primary"></i>&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aspernatur,  impedit pariatur optio repellendus, sunt quam incidunt corporis.</li>
+                        <li style="padding-top: 3px;"><i class="fa fa-check text-primary"></i>&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aspernatur,  impedit pariatur optio repellendus, sunt quam incidunt corporis.</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <br>
+                <center><img  src="/static/img/certified_iso.png" height="150px">
+                <br>
+                <h6>Certificate&nbsp;On Completetion Of Course </h6>
+                <h6>{{course_detail.course_duration}}&nbsp;Course&nbsp;Duration  </h6>
+            </center>
+
+            </div>
+         </div>
+        <br>
+        <H3 class="text-center">Sponser By</H3>
+        <img src="/static/img/banner_dell.png" width="100%" height="150px" alt="">
+        <h4 class="text-center m-4">Course Syllabus</h4>
+        
+            <div id="accordion">
+                <div>
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Lesson 1
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+                <div >
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Lesson 2
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+                <div >
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button class="btn  btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Lesson 3
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+                <div >
+                    <div class="card-header" id="headingFour">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link  " data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Lesson 4
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+              </div>
+         <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
+                <h1>What Say Our Students</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                            <img class="img-fluid mx-auto mb-3" src="/static/img/testimonial-1.jpg" alt="">
+                            <h5 class="m-0">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                            <img class="img-fluid mx-auto mb-3" src="/static/img/testimonial-2.jpg" alt="">
+                            <h5 class="m-0">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
+                            <img class="img-fluid mx-auto mb-3" src="/static/img/testimonial-3.jpg" alt="">
+                            <h5 class="m-0">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+         
+         
+    </div>
+    </div>
+    
+{% endblock %}
+  
